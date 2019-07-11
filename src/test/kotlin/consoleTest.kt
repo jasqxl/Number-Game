@@ -5,7 +5,7 @@ import java.io.PrintStream
 
 
 class ConsoleTest {
-    private var console = Console()
+    private var console = Console(Validator())
 
     @Test
     fun shouldPrintWelcomeMessage() {
@@ -14,7 +14,7 @@ class ConsoleTest {
         try {
             System.setOut(PrintStream(outputStream))
             console.play()
-            Assertions.assertEquals("Welcome to the Number Game!\n", outputStream.toString())
+            Assertions.assertEquals("Welcome to the Validator Game!\n", outputStream.toString())
         } finally {
             System.setOut(stdout)
         }
