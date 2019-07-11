@@ -1,11 +1,14 @@
 class Console(
-    private val validator: Validator
+    private val number: Number
 ) {
-    private var answer: String = ""
-
     fun play() {
         println("Welcome to the Validator Game!")
-        this.answer = validator.generateUniqueFourDigitString()
+        print("Generating digits.. ")
+
         return
     }
+
+    // Read input from console
+    // Check input from console
+    // Return result to console
 }
