@@ -5,7 +5,7 @@ import java.io.PrintStream
 
 
 class ConsoleTest {
-    private var console = Console(Number(Validator()))
+    private var console = Console()
 
     @Test
     fun shouldPrintWelcomeMessage() {

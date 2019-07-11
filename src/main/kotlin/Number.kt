@@ -1,18 +1,17 @@
-import kotlin.random.Random
+class Number(numberString: String = "") {
+    private val numberUtils = NumberUtils()
 
-class Number(
-    private val validator: Validator
-) {
-    private var answer: String = ""
-    private var guess: String = ""
+    private var numberString: String = ""
 
-    fun generateUniqueFourDigits(): String {
-        this.answer = Random.nextInt(0, 9999).toString().padStart(4, '0')
-
-        if (validator.isStringWithUniqueChar(this.answer)) {
-            println("4 random unique digits successfully generated")
-            return this.answer
+    init {
+        if (numberString.isEmpty()) {
+            this.numberString = numberUtils.generateUniqueFourDigits()
+        } else {
+            this.numberString = numberString
         }
-        return generateUniqueFourDigits()
+    }
+
+    fun getNumber(): String {
+        return this.numberString
     }
 }

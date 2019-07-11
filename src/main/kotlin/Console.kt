@@ -1,9 +1,6 @@
-class Console(
-    private val number: Number
-) {
+class Console {
     fun play() {
         println("Welcome to the Validator Game!")
-        print("Generating digits.. ")
 
         return
     }
