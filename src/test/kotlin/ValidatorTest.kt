@@ -58,4 +58,19 @@ class ValidatorTest {
             Assertions.assertFalse(result)
         }
     }
+
+    @Nested
+    inner class OccurranceCount {
+        @Test
+        fun shouldReturnZeroCount() {
+            val result = validator.occurrenceCount("8765", "1234")
+            Assertions.assertEquals(0, result)
+        }
+
+        @Test
+        fun shouldReturnCorrectCount() {
+            val result = validator.occurrenceCount("5234", "2345")
+            Assertions.assertEquals(4, result)
+        }
+    }
 }

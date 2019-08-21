@@ -9,4 +9,11 @@ class Validator {
             .map{ char -> string.count { char == it } == 1 }
             .all { it }
     }
+
+    fun occurrenceCount(input: String, answer: String): Int {
+        return input
+            .map { char -> answer.find { stringChar -> stringChar == char } != null }
+            .filter { bool -> bool == true }
+            .size
+    }
 }
