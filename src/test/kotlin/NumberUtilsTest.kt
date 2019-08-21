@@ -51,4 +51,31 @@ class NumberUtilsTest {
             Assertions.assertEquals("Input is not a unique string, please try again", exception.message)
         }
     }
+
+    @Nested
+    inner class GetResult {
+        @Test
+        fun shouldReturn0A0B() {
+            val result = numberUtils.getResult(Number("1234"), Number("6795"))
+            Assertions.assertEquals("0 A 0 B", result)
+        }
+
+        @Test
+        fun shouldReturn0A4B() {
+            val result = numberUtils.getResult(Number("7421"), Number("1742"))
+            Assertions.assertEquals("0 A 4 B", result)
+        }
+
+        @Test
+        fun shouldReturn1A3B() {
+            val result = numberUtils.getResult(Number("1234"), Number("1742"))
+            Assertions.assertEquals("1 A 3 B", result)
+        }
+
+        @Test
+        fun shouldReturn4A4B() {
+            val result = numberUtils.getResult(Number("1236"), Number("1236"))
+            Assertions.assertEquals("4 A 4 B", result)
+        }
+    }
 }

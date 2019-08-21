@@ -23,4 +23,9 @@ class NumberUtils {
             throw IllegalArgumentException("Input is not a unique string, please try again")
         }
     }
+
+    fun getResult(input: Number, answer: Number): String {
+        return validator.positionCount(input.getNumber(), answer.getNumber()).toString() + " A " +
+            validator.occurrenceCount(input.getNumber(), answer.getNumber()).toString() + " B"
+    }
 }
