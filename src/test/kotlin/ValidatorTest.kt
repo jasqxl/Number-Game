@@ -68,8 +68,35 @@ class ValidatorTest {
         }
 
         @Test
-        fun shouldReturnCorrectCount() {
+        fun shouldReturnCorrectCountOfOne() {
+            val result = validator.occurrenceCount("8627", "2345")
+            Assertions.assertEquals(1, result)
+        }
+
+        @Test
+        fun shouldReturnCorrectCountOfFour() {
             val result = validator.occurrenceCount("5234", "2345")
+            Assertions.assertEquals(4, result)
+        }
+    }
+
+    @Nested
+    inner class PositionCount {
+        @Test
+        fun shouldReturnZeroCount() {
+            val result = validator.positionCount("5234", "2345")
+            Assertions.assertEquals(0, result)
+        }
+
+        @Test
+        fun shouldReturnCorrectCountOfOne() {
+            val result = validator.positionCount("4235", "2345")
+            Assertions.assertEquals(1, result)
+        }
+
+        @Test
+        fun shouldReturnCorrectCountOfFour() {
+            val result = validator.positionCount("2345", "2345")
             Assertions.assertEquals(4, result)
         }
     }

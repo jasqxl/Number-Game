@@ -16,4 +16,11 @@ class Validator {
             .filter { bool -> bool == true }
             .size
     }
+
+    fun positionCount(input: String, answer: String): Int {
+        return input
+            .map { char -> char == answer[input.indexOf(char)] }
+            .filter { bool -> bool == true }
+            .size
+    }
 }
