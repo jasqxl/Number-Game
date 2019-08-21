@@ -1,3 +1,4 @@
+import java.lang.IllegalArgumentException
 import kotlin.random.Random
 
 class NumberUtils {
@@ -11,5 +12,15 @@ class NumberUtils {
             return randomNumber
         }
         return generateUniqueFourDigits()
+    }
+
+    fun checkInput(number: Number) {
+        val numberString = number.getNumber()
+        if (!validator.isFourDigitString(numberString)) {
+            throw IllegalArgumentException("Input is not a 4 digit string, please try again")
+        }
+        if (!validator.isStringWithUniqueChar(numberString)) {
+            throw IllegalArgumentException("Input is not a unique string, please try again")
+        }
     }
 }
