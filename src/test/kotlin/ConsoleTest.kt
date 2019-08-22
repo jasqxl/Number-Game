@@ -13,10 +13,16 @@ class ConsoleTest {
         val outputStream = ByteArrayOutputStream()
         try {
             System.setOut(PrintStream(outputStream))
-            console.play()
-            Assertions.assertEquals("Welcome to the Validator Game!\n", outputStream.toString())
+            console.start()
+            Assertions.assertEquals("Welcome to the Number Game!\n", outputStream.toString())
         } finally {
             System.setOut(stdout)
         }
     }
+
+//    @Test
+//    fun shouldReturnTrueIfInputIsCorrect() {
+//        console.end()
+//
+//    }
 }

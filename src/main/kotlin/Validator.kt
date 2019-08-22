@@ -13,14 +13,14 @@ class Validator {
     fun occurrenceCount(input: String, answer: String): Int {
         return input
             .map { char -> answer.find { stringChar -> stringChar == char } != null }
-            .filter { bool -> bool == true }
+            .filter { bool -> bool }
             .size
     }
 
     fun positionCount(input: String, answer: String): Int {
         return input
             .map { char -> char == answer[input.indexOf(char)] }
-            .filter { bool -> bool == true }
+            .filter { bool -> bool }
             .size
     }
 }
